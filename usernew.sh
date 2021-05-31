@@ -17,6 +17,11 @@ read -p "Username : " Login
 read -p "Password : " Pass
 read -p "Expired (hari): " masaaktif
 
+if [[ "$IP" = "" ]]; then
+domain=$(cat /etc/v2ray/domain)
+else
+domain=$IP
+fi
 IP=$(wget -qO- ipinfo.io/ip);
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
 CITY=$(curl -s ipinfo.io/city )
@@ -36,7 +41,7 @@ sleep 0.5
 echo Setting Password: $Pass
 sleep 0.5
 clear
-useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
+useradd -e date -d "$masaaktif days" +"%Y-%m-%d" -s /bin/false -M $Login
 exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 echo -e ""
@@ -45,17 +50,27 @@ echo -e "SSH & OpenVPN Account Info"
 echo -e "Username       : $Login "
 echo -e "Password       : $Pass"
 echo -e "===============================" | lolcat
+echo -e "Domain         : ${domain}"
 echo -e "Host           : $IP"
 echo -e "ISP            : $ISP"
 echo -e "CITY           : $CITY"
 echo -e "OpenSSH        : 22"
 echo -e "Dropbear       : 109, 143"
-echo -e "SSL/TLS        :$ssl"
-echo -e "Port Squid     :$sqd"
+echo -e "SSL/TLS        : $ssl"
+echo -e "Port SSH CDN   : 2082"
+echo -e "Port Squid     : $sqd"
 echo -e "OpenVPN        : TCP $ovpn http://$IP:81/client-tcp-$ovpn.ovpn"
 echo -e "OpenVPN        : UDP $ovpn2 http://$IP:81/client-udp-$ovpn2.ovpn"
 echo -e "OpenVPN        : SSL 442 http://$IP:81/client-tcp-ssl.ovpn"
 echo -e "badvpn         : 7100-7300"
 echo -e "===============================" | lolcat
+echo -e "PAYLOAD"
+echo -e "=========" | lolcat
+echo -e "GET / HTTP/1.1[crlf]Host: ${domain}[crlf]Connection: Keep-Alive[crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]"
+echo -e "=================" | lolcat
+echo -e "SETING HOST SSH"
+echo -e "=================" | lolcat
+echo -e "bimbel.ruangguru.com:2082@$Login:$Pass"
+echo -e "================================" | lolcat
 echo -e "Expired On     : $exp"
 echo -e "AutoScript By Endka"
