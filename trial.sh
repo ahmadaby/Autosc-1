@@ -13,6 +13,11 @@ echo "Only For Premium Users"
 exit 0
 fi
 clear
+if [[ "$IP" = "" ]]; then
+domain=$(cat /etc/v2ray/domain)
+else
+domain=$IP
+fi
 IP=$(wget -qO- ipinfo.io/ip);
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
 CITY=$(curl -s ipinfo.io/city )
