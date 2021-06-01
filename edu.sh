@@ -9,7 +9,7 @@ chmod +x /usr/local/bin/edu-proxy
 # Installing Service
 cat > /etc/systemd/system/edu-proxy.service << END
 [Unit]
-Description=Python Edu Proxy By Horasss Service
+Description=Python Edu Proxy By Endka
 Documentation=https://endka-stores.xyz
 After=network.target nss-lookup.target
 
