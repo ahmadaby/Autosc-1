@@ -15,6 +15,12 @@ fi
 IP=$(wget -qO- ipinfo.io/ip);
 date=$(date +"%Y-%m-%d")
 clear
+source /var/lib/premium-script/ipvps.conf
+if [[ "$IP" = "" ]]; then
+domain=$(cat /etc/v2ray/domain)
+else
+domain=$IP
+fi
 echo " Enter Your Email To Receive Message"
 read -rp " Email: " -e email
 sleep 1
@@ -45,7 +51,11 @@ id=(`echo $url | grep '^https' | cut -d'=' -f2`)
 link="https://drive.google.com/u/4/uc?id=${id}&export=download"
 echo -e "The following is a link to your vps data backup file.
 
+===================
 Your VPS IP $IP
+
+Domain=${domain}
+===================
 
 $link
 
@@ -57,3 +67,4 @@ rm -rf /root/backup
 rm -r /root/$IP-$date.zip
 echo "Done"
 echo "Please Check Your Email"
+
