@@ -11,16 +11,15 @@ else
 echo -e "${red}Permission Denied!${NC}";
 echo "Only For Premium Users"
 exit 0
-fi
-IP=$(wget -qO- ipinfo.io/ip);
-date=$(date +"%Y-%m-%d")
-clear
 source /var/lib/premium-script/ipvps.conf
 if [[ "$IP" = "" ]]; then
 domain=$(cat /etc/v2ray/domain)
 else
 domain=$IP
 fi
+IP=$(wget -qO- ipinfo.io/ip);
+date=$(date +"%Y-%m-%d")
+clear
 echo " Enter Your Email To Receive Message"
 read -rp " Email: " -e email
 sleep 1
