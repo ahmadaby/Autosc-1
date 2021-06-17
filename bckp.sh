@@ -13,10 +13,10 @@ echo "Only For Premium Users"
 exit 0
 fi
 source /var/lib/premium-script/ipvps.conf
-if [[ "$IP" = "" ]]; then
+if [[ "$IPS" = "" ]]; then
 domain=$(cat /etc/v2ray/domain)
 else
-domain=$IP
+domain=$IPS
 fi
 IP=$(wget -qO- ipinfo.io/ip);
 date=$(date +"%Y-%m-%d")
@@ -52,8 +52,11 @@ echo -e "The following is a link to your vps data backup file.
 Your VPS IP $IP
 Domain=${domain}
 =================
+
 $link
+
 If you want to restore data, please enter the link above.
+
 Thank You For Using Our Services.
 @Copyright 2021 By Endka" | mail -s "Backup Data" $email
 rm -rf /root/backup
