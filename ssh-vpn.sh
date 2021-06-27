@@ -288,7 +288,8 @@ wget -O auto-reboot "https://raw.githubusercontent.com/Endka22/Autosc/main/auto-
 wget -O tr-mnt "https://raw.githubusercontent.com/Endka22/Autosc/main/tr-mnt.sh"
 wget -O cff "https://raw.githubusercontent.com/Endka22/Autosc/main/cff.sh"
 wget -O cfd "https://raw.githubusercontent.com/Endka22/Autosc/main/cfd.sh"
-wget -O cfh"https://raw.githubusercontent.com/Endka22/Autosc/main/cfh.sh"
+wget -O cfh "https://raw.githubusercontent.com/Endka22/Autosc/main/cfh.sh"
+wget -O running "https://raw.githubusercontent.com/Endka22/Autosc/main/running.sh"
 chmod +x add-host
 chmod +x menu
 chmod +x usernew
@@ -333,6 +334,7 @@ chmod +x tr-mnt
 chmod +x cff
 chmod +x cfd
 chmod +x cfh
+chmod +x running
 echo "0 0 * * * root clear-log && reboot" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
 # remove unnecessary files
