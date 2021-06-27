@@ -109,6 +109,8 @@ echo -e " 27.  Cloudfare Add-Ons"
 
 echo -e " 28.  Pointing Bug"
 
+echo -e " 29. Status Tunneling"
+
 echo -e "\e[32m══════════════════════════════════════════\e[m"
 
 echo -e " x.   Exit From Putty / JuiceSSH / Termux"
@@ -288,6 +290,12 @@ cfd
 28)
 
 cfh
+
+;;
+
+29)
+
+running
 
 ;;
 
