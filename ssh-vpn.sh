@@ -292,6 +292,7 @@ wget -O vls "https://raw.githubusercontent.com/Endka22/Autosc/main/vls.sh"
 wget -O updatee "https://raw.githubusercontent.com/Endka22/Autosc/main/updatee.sh"
 wget -O auto-reboot "https://raw.githubusercontent.com/Endka22/Autosc/main/auto-reboot.sh"
 wget -O tr-mnt "https://raw.githubusercontent.com/Endka22/Autosc/main/tr-mnt.sh"
+wget -O bbr "https://raw.githubusercontent.com/Endka22/Autosc/main/bbr.sh"
 wget -O cff "https://raw.githubusercontent.com/Endka22/Autosc/main/cff.sh"
 wget -O cfd "https://raw.githubusercontent.com/Endka22/Autosc/main/cfd.sh"
 chmod +x add-host
@@ -335,6 +336,7 @@ chmod +x vls
 chmod +x updatee
 chmod +x auto-reboot
 chmod +x tr-mnt
+chmod +x bbr
 chmod +x cff
 chmod +x cfd
 echo "0 0 * * * root clear-log && reboot" >> /etc/crontab
