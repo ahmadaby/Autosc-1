@@ -21,7 +21,7 @@ color3='\e[0m'
 ISP=$(curl -s ipinfo.io/org | cut -d " " -f 2-10 )
 CITY=$(curl -s ipinfo.io/city )
 WKT=$(curl -s ipinfo.io/timezone )
-IPVPS=$(curl -s ipinfo.io/ip )
+IPVPS=$(curl -s ipv4.icanhazip.com )
 	echo "--------------- Welcome To Premium Script Menu ---------------"
 	echo "------------------------ Moddified By Endka -----------------------"
 	echo " "
@@ -100,6 +100,14 @@ echo -e " 22.  Restart All Service"
 echo -e " 23.  Set Auto Reboot"
 
 echo -e " 24.  Set Multi Login Akun"
+
+echo -e " 25.  Install BBR"
+
+echo -e " 26.  Add ID Cloudfare"
+
+echo -e " 27.  Cloudfare Add-Ons"
+
+echo -e " 28.  Pointing Bug"
 
 echo -e "\e[32m══════════════════════════════════════════\e[m"
 
@@ -256,6 +264,30 @@ auto-reboot
 24)
 
 autokill
+
+;;
+
+25)
+
+bbr
+
+;;
+
+26)
+
+cff
+
+;;
+
+27)
+
+cfd
+
+;;
+
+28)
+
+cfh
 
 ;;
 
