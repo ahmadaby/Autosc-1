@@ -12,6 +12,7 @@ echo -e "${red}Permission Denied!${NC}";
 echo "Only For Premium Users"
 exit 0
 fi
+mkdir /root/mail.conf
 source /root/mail.conf
 DOMAIN=$domain
 CF_ID=$email
