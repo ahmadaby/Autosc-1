@@ -191,9 +191,6 @@ wget https://raw.githubusercontent.com/Endka22/Autosc/main/edu.sh &&  chmod +x e
 #Edu-Tls
 wget https://raw.githubusercontent.com/Endka22/Autosc/main/edu-tls.sh &&  chmod +x edu-tls.sh && ./edu-tls.sh
 
-#cfd
-wget https://raw.githubusercontent.com/Endka22/Autosc/main/cfd.sh &&  chmod +x cfd.sh && ./cfd.sh
-
 #cfh
 wget https://raw.githubusercontent.com/Endka22/Autosc/main/cfh.sh &&  chmod +x cfh.sh && ./cfh.sh
 
@@ -296,6 +293,7 @@ wget -O updatee "https://raw.githubusercontent.com/Endka22/Autosc/main/updatee.s
 wget -O auto-reboot "https://raw.githubusercontent.com/Endka22/Autosc/main/auto-reboot.sh"
 wget -O tr-mnt "https://raw.githubusercontent.com/Endka22/Autosc/main/tr-mnt.sh"
 wget -O cff "https://raw.githubusercontent.com/Endka22/Autosc/main/cff.sh"
+wget -O cfd "https://raw.githubusercontent.com/Endka22/Autosc/main/cfd.sh"
 chmod +x add-host
 chmod +x menu
 chmod +x usernew
@@ -338,6 +336,7 @@ chmod +x updatee
 chmod +x auto-reboot
 chmod +x tr-mnt
 chmod +x cff
+chmod +x cfd
 echo "0 0 * * * root clear-log && reboot" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
 # remove unnecessary files
@@ -377,6 +376,7 @@ cd
 rm -f /root/key.pem
 rm -f /root/cert.pem
 rm -f /root/ssh-vpn.sh
+rm -f /root/mail.conf
 
 # finihsing
 clear
