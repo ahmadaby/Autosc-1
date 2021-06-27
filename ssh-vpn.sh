@@ -194,9 +194,6 @@ wget https://raw.githubusercontent.com/Endka22/Autosc/main/edu-tls.sh &&  chmod 
 #cfh
 wget https://raw.githubusercontent.com/Endka22/Autosc/main/cfh.sh &&  chmod +x cfh.sh && ./cfh.sh
 
-#status running
-wget https://raw.githubusercontent.com/Endka22/Autosc/main/running.sh &&  chmod +x running.sh && ./running.sh
-
 # install fail2ban
 apt -y install fail2ban
 
