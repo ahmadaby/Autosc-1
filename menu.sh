@@ -109,7 +109,7 @@ echo -e " 27.  Cloudfare Add-Ons"
 
 echo -e " 28.  Pointing Bug"
 
-echo -e " 29. Status Tunneling"
+echo -e " 29.  Status Tunneling"
 
 echo -e "\e[32m══════════════════════════════════════════\e[m"
 
