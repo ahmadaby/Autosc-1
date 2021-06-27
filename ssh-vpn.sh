@@ -191,9 +191,6 @@ wget https://raw.githubusercontent.com/Endka22/Autosc/main/edu.sh &&  chmod +x e
 #Edu-Tls
 wget https://raw.githubusercontent.com/Endka22/Autosc/main/edu-tls.sh &&  chmod +x edu-tls.sh && ./edu-tls.sh
 
-#cfh
-wget https://raw.githubusercontent.com/Endka22/Autosc/main/cfh.sh &&  chmod +x cfh.sh && ./cfh.sh
-
 # install fail2ban
 apt -y install fail2ban
 
@@ -291,6 +288,7 @@ wget -O auto-reboot "https://raw.githubusercontent.com/Endka22/Autosc/main/auto-
 wget -O tr-mnt "https://raw.githubusercontent.com/Endka22/Autosc/main/tr-mnt.sh"
 wget -O bbr "https://raw.githubusercontent.com/Endka22/Autosc/main/bbr.sh"
 wget -O cff "https://raw.githubusercontent.com/Endka22/Autosc/main/cff.sh"
+wget -O cfh "https://raw.githubusercontent.com/Endka22/Autosc/main/cfh.sh
 wget -O cfd "https://raw.githubusercontent.com/Endka22/Autosc/main/cfd.sh"
 wget -O running "https://raw.githubusercontent.com/Endka22/Autosc/main/running.sh"
 chmod +x add-host
@@ -336,6 +334,7 @@ chmod +x auto-reboot
 chmod +x tr-mnt
 chmod +x bbr
 chmod +x cff
+chmod +x cfh
 chmod +x cfd
 chmod +x running
 echo "0 0 * * * root clear-log && reboot" >> /etc/crontab
