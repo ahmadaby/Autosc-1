@@ -15,7 +15,7 @@ fi
 apt install jq curl -y
 DOMAIN=vmess.my.id
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
-SUB_DOMAIN=${sub}*.x.vmess.my.id
+SUB_DOMAIN=${sub}*.vmess.my.id
 CF_ID=prafiasangindraswari@gmail.com
 CF_KEY=75b54a5c9fd50751003abac0fefee534528c0
 set -euo pipefail
