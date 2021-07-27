@@ -7,7 +7,13 @@ domain=$(cat /root/domain)
 wget https://raw.githubusercontent.com/Endka22/Autosc/main/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
 
 # Install Trojan-GO
-wget -O /usr/local/bin/trojan-go https://raw.githubusercontent.com/xkjdox/zmndjekw/main/trojan-go
+apt -y install wget unzip zip curl tar >/dev/null 2>&1
+if test -s /etc/v2ray/v2ray.crt; then
+    lurl='https://api.github.com/repos/p4gefau1t/trojan-go/releases/latest'
+    latest_version=`curl $lurl| grep tag_name |awk -F '[:,"v]' '{print $6}'`
+    wget https://github.com/p4gefau1t/trojan-go/releases/download/v${latest_version}/trojan-go-linux-amd64.zip
+    unzip -o trojan-go-linux-amd64.zip -d /usr/local/bin/trojan-go
+    rm trojan-go-linux-amd64.zip
 chmod +x /usr/local/bin/trojan-go
 mkdir -p "/etc/trojan-go/"
 touch /etc/trojan-go/akun.conf
