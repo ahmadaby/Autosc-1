@@ -1,4 +1,4 @@
-#!/usr/bin
+#!/bin/bash
 # Wiki: https://github.com/p4gefau1t/trojan-go
 
 domain=$(cat /root/domain)
