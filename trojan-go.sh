@@ -15,9 +15,9 @@ rm -rf trojan-go-linux-amd64.zip
 chmod +x /usr/local/bin/trojan-go
 touch /etc/trojan-go/akun.conf
 touch /etc/trojan-go/trojan-go.pid
-mkdir /var/log/trojan-go/
+cd /var/log/
+mkdir -p trojan-go
 uuid=$(cat /proc/sys/kernel/random/uuid)
-EOF
 cat <<EOF> /etc/systemd/system/trojan-go.service
 [Unit]
 Description=Trojan-Go - An unidentifiable mechanism that helps you bypass GFW
