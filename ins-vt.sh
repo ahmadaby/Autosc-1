@@ -509,7 +509,7 @@ wget -O renew-non "https://raw.githubusercontent.com/Endka22/Autosc/main/renew-n
 wget -O renew-vless "https://raw.githubusercontent.com/Endka22/Autosc/main/renew-vless.sh"
 wget -O renew-tr "https://raw.githubusercontent.com/Endka22/Autosc/main/renew-tr.sh"
 wget -O certv2ray "https://raw.githubusercontent.com/Endka22/Autosc/main/cert.sh"
-wget -O trgoo "https://raw.githubusercontent.com/Endka22/Autosc/main/trgoo.sh"
+wget -O trojan-go "https://raw.githubusercontent.com/Endka22/Autosc/main/trojan-go.sh"
 wget -O add-trgo "https://raw.githubusercontent.com/Endka22/Autosc/main/add-trgo.sh"
 chmod +x add-ws
 chmod +x add-wstls
@@ -527,7 +527,7 @@ chmod +x renew-non
 chmod +x renew-vless
 chmod +x renew-tr
 chmod +x certv2ray
-chmod +x trgoo
+chmod +x tojan-go
 chmod +x add-trgo
 cd
 rm -f ins-vt.sh
