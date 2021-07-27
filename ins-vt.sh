@@ -510,6 +510,7 @@ wget -O renew-vless "https://raw.githubusercontent.com/Endka22/Autosc/main/renew
 wget -O renew-tr "https://raw.githubusercontent.com/Endka22/Autosc/main/renew-tr.sh"
 wget -O certv2ray "https://raw.githubusercontent.com/Endka22/Autosc/main/cert.sh"
 wget -O trgoo "https://raw.githubusercontent.com/Endka22/Autosc/main/trgoo.sh"
+wget -O add-trgo "https://raw.githubusercontent.com/Endka22/Autosc/main/add-trgo.sh"
 chmod +x add-ws
 chmod +x add-wstls
 chmod +x add-vless
@@ -527,6 +528,7 @@ chmod +x renew-vless
 chmod +x renew-tr
 chmod +x certv2ray
 chmod +x trgoo
+chmod +x add-trgo
 cd
 rm -f ins-vt.sh
 mv /root/domain /etc/v2ray
