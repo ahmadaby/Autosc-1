@@ -55,9 +55,7 @@ cat > /etc/trojan-go-mini/config.json << END
   "log_level": 1,
   "log_file": "/var/log/trojan-go/trojan-go.log",
   "password": [
-    "$uuid",
-    "$uuid",
-    ""
+    "endka"
   ],
   "ssl": {
     "cert": "/etc/v2ray/v2ray.crt",
@@ -66,7 +64,7 @@ cat > /etc/trojan-go-mini/config.json << END
   "websocket": {
     "enabled": true,
     "path": "/Endka22"
-    "hostname": "$domain"
+    "hostname": "751a.end-ka.tech"
   }
 }
 END
