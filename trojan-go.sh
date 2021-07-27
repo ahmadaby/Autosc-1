@@ -9,7 +9,7 @@ wget https://raw.githubusercontent.com/Endka22/Autosc/main/bbr.sh &&  chmod +x b
 # Install Trojan-GO
 mkdir -p /etc/trojan-go/
 cd /etc/trojan-go/
-wget https://github.com/p4gefau1t/trojan-go/releases/download/v0.4.2/trojan-go-linux-amd64.zip
+wget -O https://github.com/p4gefau1t/trojan-go/releases/download/v0.4.2/trojan-go-linux-amd64.zip
 unzip trojan-go-linux-amd64.zip
 rm -rf trojan-go-linux-amd64.zip
 chmod +x /usr/local/bin/trojan-go
