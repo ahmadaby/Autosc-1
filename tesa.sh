@@ -22,7 +22,7 @@ wget -O /usr/local/bin/geosite.dat https://raw.githubusercontent.com/Endka22/Aut
 chmod +x /usr/local/bin/trojan-go
 
 # Service
-cat > /etc/systemd/system/trojan-go.service << END
+cat <<EOF> /etc/systemd/system/trojan-go.service
 [Unit]
 Description=Trojan-Go - An unidentifiable mechanism that helps you bypass GFW
 Documentation=https://p4gefau1t.github.io/trojan-go/
@@ -39,10 +39,10 @@ LimitNOFILE=infinity
 
 [Install]
 WantedBy=multi-user.target
-END
+EOF
 
 # Config
-cat > /etc/trojan-go/config.json << END
+cat <<EOF> /etc/trojan-go/config.json
 {
   "run_type": "server",
   "local_addr": "0.0.0.0",
@@ -143,7 +143,7 @@ cat > /etc/trojan-go/config.json << END
     }
   }
 }
-END
+EOF
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2096 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 81 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2096 -j ACCEPT
