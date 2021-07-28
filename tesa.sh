@@ -2,7 +2,7 @@
 # Trojan Go Auto Setup 
 # =========================
 
-apt update -y
+apt update
 apt upgrade -y
 apt install wget -y
 apt install screen -y
@@ -143,7 +143,7 @@ cat > /etc/trojan-go/config.json << END
     }
   }
 }
-
+END
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2096 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 81 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2096 -j ACCEPT
