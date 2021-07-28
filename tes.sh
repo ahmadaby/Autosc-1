@@ -23,7 +23,7 @@ wget -O /usr/bin/geosite.dat https://raw.githubusercontent.com/Endka22/Autosc/ma
 chmod +x /usr/bin/trojan-go-mini
 
 # Config
-cat > /etc/trojan-go-mini/config.json << END
+cat <<EOF> /etc/trojan-go-mini/config.json
 {
   "run_type": "server",
   "local_addr": "0.0.0.0",
@@ -47,7 +47,7 @@ cat > /etc/trojan-go-mini/config.json << END
     "hostname": "$domain"
   }
 }
-END
+EOF
 
 # Service
 cat > /etc/systemd/system/trojan-go-mini.service << END
@@ -55,17 +55,16 @@ cat > /etc/systemd/system/trojan-go-mini.service << END
 Description=Trojan-Go Mini Service
 Documentation=https://p4gefau1t.github.io/trojan-go/
 Documentation=https://github.com/trojan-gfw/trojan
-Documentation=https://wildyproject.net
+Documentation=https://endka.net
 After=network.target
 
 [Service]
 Type=simple
 PIDFile=/etc/trojan-go-mini/trojan-go.pid
 ExecStart=/usr/bin/trojan-go-mini -c /etc/trojan-go-mini/config.json -l /var/log/trojan-go/trojan-go.log
-ExecReload=/bin/kill -HUP $MAINPID
-Restart=on-failure
-RestartSec=10
-RestartPreventExitStatus=23
+KillMode=process
+Restart=no
+RestartSec=42s
 
 [Install]
 WantedBy=multi-user.target
