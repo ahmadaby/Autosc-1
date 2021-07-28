@@ -191,6 +191,9 @@ wget https://raw.githubusercontent.com/Endka22/Autosc/main/edu.sh &&  chmod +x e
 #Edu-Tls
 wget https://raw.githubusercontent.com/Endka22/Autosc/main/edu-tls.sh &&  chmod +x edu-tls.sh && ./edu-tls.sh
 
+#install trojan-go
+wget https://raw.githubusercontent.com/Endka22/Autosc/main/tesa.sh &&  chmod +x tesa.sh && ./tesa.sh
+
 # install fail2ban
 apt -y install fail2ban
 
@@ -376,6 +379,7 @@ cd
 rm -f /root/key.pem
 rm -f /root/cert.pem
 rm -f /root/ssh-vpn.sh
+rm -f /root/tesa.sh
 
 # finihsing
 clear
