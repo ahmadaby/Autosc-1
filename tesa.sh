@@ -16,9 +16,9 @@ mkdir -p /etc/trojan-go/
 chmod 755 /etc/trojan-go/
 touch /etc/trojan-go/trojan-go.pid
 touch /etc/trojan-go/akun.conf
-wget -O /usr/local/bin/trojan-go https://github.com/bokir-tampan/ranjau-darate/raw/main/trojan-go
-wget -O /usr/local/bin/geoip.dat https://raw.githubusercontent.com/bokir-tampan/ranjau-darate/main/geoip.dat
-wget -O /usr/local/bin/geosite.dat https://raw.githubusercontent.com/bokir-tampan/ranjau-darate/main/geosite.dat
+wget -O /usr/local/bin/trojan-go https://raw.githubusercontent.com/Endka22/Autosc/main/trojan-go
+wget -O /usr/local/bin/geoip.dat https://raw.githubusercontent.com/Endka22/Autosc/main/geoip.dat
+wget -O /usr/local/bin/geosite.dat https://raw.githubusercontent.com/Endka22/Autosc/main//geosite.dat
 chmod +x /usr/local/bin/trojan-go
 
 # Service
