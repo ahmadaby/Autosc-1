@@ -29,7 +29,7 @@ cat > /etc/trojan-go-mini/config.json << END
   "local_addr": "0.0.0.0",
   "local_port": 2096,
   "remote_addr": "127.0.0.1",
-  "remote_port": 81,
+  "remote_port": 85,
   "log_level": 1,
   "log_file": "/var/log/trojan-go/trojan-go.log",
   "password": [
@@ -72,9 +72,9 @@ WantedBy=multi-user.target
 END
 
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2096 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 81 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 85 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2096 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 81 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 85 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
