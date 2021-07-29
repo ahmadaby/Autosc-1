@@ -132,7 +132,7 @@ cat> /etc/v2ray/none.json << END
   },
   "inbounds": [
     {
-      "port": 80,
+      "port": 443,
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -399,7 +399,7 @@ cat <<EOF > /etc/trojan/config.json
 {
     "run_type": "server",
     "local_addr": "0.0.0.0",
-    "local_port": 443,
+    "local_port": 2087,
     "remote_addr": "127.0.0.1",
     "remote_port": 2603,
     "password": [
@@ -470,13 +470,13 @@ iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2083 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8880 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2095 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2097 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8443 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 443 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 80 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2083 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8880 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2095 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2087 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
 iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
