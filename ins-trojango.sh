@@ -7,12 +7,6 @@ domain=$(cat /root/domain)
 wget https://raw.githubusercontent.com/Endka22/Autosc/main/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
 
 # Install Trojan-GO
-_INSTALL(){
-	if [ -f /etc/centos-release ]; then
-		yum install -y wget curl zip
-	else
-		apt install -y wget curl zip
-	fi
 	mkdir /etc/trojan-go
 	mkdir /usr/lib/trojan-go
 	wget -N --no-check-certificate https://github.com/p4gefau1t/trojan-go/releases/download/$(curl -fsSL https://api.github.com/repos/p4gefau1t/trojan-go/releases | grep '"tag_name":' | head -n 1 | sed -E 's/.*"([^"]+)".*/\1/')/trojan-go-linux-amd64.zip && unzip -d /usr/lib/trojan-go/ ./trojan-go-linux-amd64.zip && mv /usr/lib/trojan-go/trojan-go /usr/bin/ && chmod +x /usr/bin/trojan-go && rm -rf ./trojan-go-linux-amd64.zip
@@ -21,11 +15,7 @@ _INSTALL(){
 	systemctl daemon-reload
 	systemctl enable trojan-go
 	echo Done!
-}
 
-_INSTALL
-
-EOF
 cat <<EOF> /etc/systemd/system/trojan-go.service
 [Unit]
 Description=Trojan-Go - An unidentifiable mechanism that helps you bypass GFW
@@ -35,7 +25,7 @@ After=network.target nss-lookup.target
 [Service]
 User=root
 NoNewPrivileges=true
-ExecStart=/usr/local/bin/trojan-go -config /etc/trojan-go/server.json
+ExecStart=/usr/local/bin/trojan-go -config /etc/trojan-go/config.json
 Restart=on-failure
 RestartSec=10s
 LimitNOFILE=infinity
