@@ -1,12 +1,8 @@
 #!/bin/bash
-# Wiki: https://github.com/p4gefau1t/trojan-go
 
 domain=$(cat /root/domain)
 
-#install bbr
-wget https://raw.githubusercontent.com/Endka22/Autosc/main/bbr.sh &&  chmod +x bbr.sh && ./bbr.sh
-
-# Install Trojan-GO
+#Install Trojan-GO
 mkdir /etc/trojan-go
 mkdir /usr/lib/trojan-go
 wget -N --no-check-certificate https://github.com/p4gefau1t/trojan-go/releases/download/$(curl -fsSL https://api.github.com/repos/p4gefau1t/trojan-go/releases | grep '"tag_name":' | head -n 1 | sed -E 's/.*"([^"]+)".*/\1/')/trojan-go-linux-amd64.zip && unzip -d /usr/lib/trojan-go/ ./trojan-go-linux-amd64.zip && mv /usr/lib/trojan-go/trojan-go /usr/bin/ && chmod +x /usr/bin/trojan-go && rm -rf ./trojan-go-linux-amd64.zip
