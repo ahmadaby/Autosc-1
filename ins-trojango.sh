@@ -149,8 +149,8 @@ cat > /etc/trojan-go/config.json << END
   }
 }
 END
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2096 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2096 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 443 -j ACCEPT
 ip6tables -I INPUT -m state --state NEW -m tcp -p tcp --dport 81 -j ACCEPT
 ip6tables -I INPUT -m state --state NEW -m udp -p udp --dport 81 -j ACCEPT
 iptables-save >/etc/iptables.rules.v4
