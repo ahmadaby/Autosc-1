@@ -160,12 +160,10 @@ EOF
 cat <<EOF > /etc/trojan/uuid.txt
 $uuid
 EOF
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2096 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2096 -j ACCEPT
-ip6tables -I INPUT -m state --state NEW -m tcp -p tcp --dport 81 -j ACCEPT
-ip6tables -I INPUT -m state --state NEW -m udp -p udp --dport 81 -j ACCEPT
-iptables-save >/etc/iptables.rules.v4
-ip6tables-save >/etc/iptables.rules.v6
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 443 -j ACCEPT
+iptables-save > /etc/iptables.up.rules
+iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
 systemctl daemon-reload
