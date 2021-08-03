@@ -1,5 +1,5 @@
 #!/bin/bash
-domain=$(cat /root/domain)
+domain=$(cat /etc/v2ray/domain)
 apt update -y
 apt upgrade -y
 apt install wget -y
@@ -25,6 +25,7 @@ uuid=$(cat /proc/sys/kernel/random/uuid)
 # Trojan Go Akun 
 mkdir -p /etc/trojan-go/
 touch /etc/trojan-go/akun.conf
+touch /etc/trojan-go/uuid.txt
 
 # Installing Trojan Go
 mkdir -p /etc/trojan-go/
@@ -167,10 +168,19 @@ iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
 systemctl daemon-reload
-
-# Starting
-systemctl daemon-reload
 systemctl enable trojan-go.service
 systemctl start trojan-go
+cd /usr/bin
+wget -O add-trgo "https://raw.githubusercontent.com/Endka22/Autosc/main/add-trgo.sh"
+wget -O del-trgo "https://raw.githubusercontent.com/Endka22/Autosc/main/del-trgo.sh"
+wget -O cek-trgo "https://raw.githubusercontent.com/Endka22/Autosc/main/cek-trgo.sh"
+wget -O renew-trgo "https://raw.githubusercontent.com/Endka22/Autosc/main/renew-trgo.sh"
+wget -O xp-trgo "https://raw.githubusercontent.com/Endka22/Autosc/main/xp-trgo.sh"
+chmod +x add-trgo
+chmod +x del-trgo
+chmod +x cek-trgo
+chmod +x renew-trgo
+chmod +x xp-trgo
 rm -f ins-trojango.sh
-mv /root/domain /etc/v2ray
+
+
